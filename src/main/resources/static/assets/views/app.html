@@ -1,0 +1,43 @@
+<div id="dokuwiki__site">
+    <div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki loggedIn notFound  showSidebar hasSidebar">
+        <!-- header -->
+        <header data-ng-include=" 'assets/views/partials/header.html' "></header>
+        <!-- / header -->
+
+        <!-- wrapper -->
+        <div class="wrapper group">
+            <!-- aside -->
+            <div id="dokuwiki__aside">
+                <div class="pad aside include group">
+                    <div data-ng-include=" 'assets/views/partials/sidebar.html' "></div>
+                </div>
+            </div>
+            <!-- / aside -->
+
+            <!-- main content -->
+            <div id="dokuwiki__content">
+                <div class="pad group">
+                    <div data-ng-include=" 'assets/views/partials/content.html' "></div>
+                </div>
+            </div>
+            <!-- / main content -->
+
+            <hr class="a11y" />
+
+            <!-- page tools -->
+            <div id="dokuwiki__pagetools">
+                <div data-ng-include=" 'assets/views/partials/page-tools.html' "></div>
+            </div>
+            <!-- / page tools -->
+        </div>
+        <!-- / wrapper -->
+
+
+        <!-- footer -->
+        <div id="dokuwiki__footer">
+            <footer data-ng-include=" 'assets/views/partials/footer.html' " class="hidden-print"></footer>
+        </div>
+        <!-- / footer -->
+    </div>
+</div>
+<!-- / site -->

@@ -1,0 +1,34 @@
+<div id="dokuwiki__header" ng-controller="headerController">
+    <div class="pad group">
+        <div class="headings group">
+            <h1><a href="/"  accesskey="h" title="[H]"><img src="assets/images/logo.png" width="64" height="64" alt="" /> <span>WEB PORTAL</span></a></h1>
+            <p class="claim">Test Automation Platform</p>
+        </div>
+
+        <div class="tools group">
+            <!-- USER TOOLS -->
+            <div id="dokuwiki__usertools">
+                <h3 class="a11y">用户工具</h3>
+                <ul>
+                    <li class="user">登录为: <bdi>{{loggedInUser}}</bdi></li><li><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/%E5%BC%80%E5%A7%8B?do=admin"  class="action admin" rel="nofollow" title="管理">管理</a></li><li><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/%E5%BC%80%E5%A7%8B?do=profile"  class="action profile" rel="nofollow" title="更新个人信息">更新个人信息</a></li><li><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/%E5%BC%80%E5%A7%8B?do=logout&amp;sectok=689759265ce6665080e5fad0971ed155"  class="action logout" rel="nofollow" title="退出">退出</a></li>                </ul>
+            </div>
+
+            <!-- SITE TOOLS -->
+            <div id="dokuwiki__sitetools">
+                <h3 class="a11y">站点工具</h3>
+                <form action="http://127.0.0.1/wiki/doku.php/%E5%BC%80%E5%A7%8B" accept-charset="utf-8" class="search" id="dw__search" method="get" role="search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" placeholder="搜索" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" /><button type="submit" title="搜索">搜索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="http://127.0.0.1/wiki/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="软件开发:java:开始" /><input type="hidden" name="sectok" value="689759265ce6665080e5fad0971ed155" /><select name="do" class="edit quickselect" title="工具"><option value="">工具</option><optgroup label="页面工具"><option value="edit">创建该页面</option><option value="revisions">修订记录</option><option value="backlink">反向链接</option></optgroup><optgroup label="站点工具"><option value="recent">最近更改</option><option value="media">媒体管理器</option><option value="index">网站地图</option></optgroup><optgroup label="用户工具"><option value="logout">退出</option><option value="profile">更新个人信息</option><option value="admin">管理</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+                <ul>
+                    <li><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/%E5%BC%80%E5%A7%8B?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="最近更改 [R]">最近更改</a></li><li><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/%E5%BC%80%E5%A7%8B?do=media&amp;ns=%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%3Ajava"  class="action media" rel="nofollow" title="媒体管理器">媒体管理器</a></li><li><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/%E5%BC%80%E5%A7%8B?do=index"  class="action index" accesskey="x" rel="nofollow" title="网站地图 [X]">网站地图</a></li>            </ul>
+            </div>
+
+        </div>
+
+        <!-- BREADCRUMBS -->
+        <div class="breadcrumbs">
+            <div class="trace"><span class="bchead">您的足迹:</span> <span class="bcsep">•</span> <bdi><a href="http://127.0.0.1/wiki/doku.php/%E5%BC%80%E5%A7%8B"  class="breadcrumbs" title="开始">开始</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://127.0.0.1/wiki/doku.php/playground/playground"  class="breadcrumbs" title="playground:playground">playground</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/spring"  class="breadcrumbs" title="软件开发:java:spring">spring</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/spring5555copy"  class="breadcrumbs" title="软件开发:java:spring5555copy">spring5555copy</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/spring_copy"  class="breadcrumbs" title="软件开发:java:spring_copy">spring_copy</a></bdi></span></div>
+        </div>
+
+        <hr class="a11y" />
+    </div>
+</div>
