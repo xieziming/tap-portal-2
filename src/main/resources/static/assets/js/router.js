@@ -12,25 +12,26 @@
 app.config(
     function ($stateProvider, $urlRouterProvider, $controllerProvider, $ocLazyLoadProvider, JS_REQUIRES) {
 
-        $urlRouterProvider.when("", "/home");
+        $urlRouterProvider.when('', '/home');
 
         $stateProvider
-            .state("tap", {
-                url: "",
-                templateUrl: "assets/views/app.html",
-                resolve: lazyLoad("appController", "headerController", "sidebarController"),
+            .state('tap', {
+                url: '',
+                templateUrl: 'assets/views/app.html',
+                resolve: lazyLoad('appController', 'headerController', 'sidebarController'),
                 abstract: true
-            }).state("tap.home", {
-            url: "/home",
-            templateUrl: "assets/views/content/home.html",
-        }).state("tap.testcase", {
-            url: "/testcase",
-            template: "<div ui-view ></div>",
+            }).state('tap.home', {
+            url: '/home',
+            templateUrl: 'assets/views/content/home.html',
+        }).state('tap.testcase', {
+            url: '/testcase',
+            template: '<div ui-view ></div>',
             abstract: true
-        }).state("tap.testcase.list", {
-            url: "/list",
-            templateUrl: "assets/views/content/test-case-list.html",
-            resolve: lazyLoad("testCaseListController")
+        }).state('tap.testcase.list', {
+            url: '/list',
+            params: '/',
+            templateUrl: 'assets/views/content/test-case-list.html',
+            resolve: lazyLoad('testCaseListController')
         });
 
 
