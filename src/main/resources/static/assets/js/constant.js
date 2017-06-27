@@ -10,7 +10,7 @@
  * Config constant
  */
 app.constant('TAP_GATEWAY', {
-    testCaseRequest: 'http://127.0.0.1:9090',
+    testCaseRequest: 'http://192.168.1.102:9090',
     executionRequest: 'http://127.0.0.1:9090'
 });
 
