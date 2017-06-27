@@ -10,8 +10,8 @@
  * Config constant
  */
 app.constant('TAP_GATEWAY', {
-    testCaseRequest: 'http://127.0.0.1:9999/tap-testcase',
-    executionRequest: 'http://127.0.0.1:9999/tap-execution'
+    testCaseRequest: 'http://127.0.0.1:9090',
+    executionRequest: 'http://127.0.0.1:9090'
 });
 
 app.constant('JS_REQUIRES', {
@@ -24,11 +24,15 @@ app.constant('JS_REQUIRES', {
             files: ['assets/js/controllers/sidebarController.js']
         }, {name:  'testCaseListController',
             files: ['assets/js/controllers/testCaseListController.js']
+        }, {name:  'testCaseDetailController',
+            files: ['assets/js/controllers/testCaseDetailController.js']
         }
     ],
     modules: [
         {name: 'ngTable',
             files: ['bower_components/ng-table/dist/ng-table.min.js', 'bower_components/ng-table/dist/ng-table.min.css']
+        }, {name: 'json-editor',
+            files: ['bower_components/json-editor/dist/jsoneditor.min.js']
         }
     ]
 });

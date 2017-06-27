@@ -1,0 +1,12 @@
+<div ng-controller="testCaseDetailController">
+    <div class="pageId"><span>{{testCaseDetail.uid}} : {{testCaseDetail.name}}</span></div>
+    <div class="page group">
+        <div class='medium-12-columns'>
+            <button id='restore' class='secondary tiny'>Restore to Default</button>
+            <button id='submit' class='tiny pull-right'>Submit</button>
+            <span id='valid_indicator' class='label'></span>
+        </div>
+        <div id="editor_holder"></div>
+    </div>
+    <div class="docInfo">Created at {{testCaseDetail.createdTime}}</div>
+</div>

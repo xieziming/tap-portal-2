@@ -1,0 +1,139 @@
+{
+  "title": "Test Case",
+  "type": "object",
+  "id": "testcase",
+  "properties": {
+    "path": {
+      "type": "string",
+      "options": {
+        "grid_columns": 12
+      }
+    },
+    "createdTime": {
+      "type": "string",
+      "options": {
+        "hidden": true
+      }
+    },
+    "uid": {
+	  "type": "string"
+	},
+	"name": {
+	  "type": "string"
+	},
+	"status": {
+	  "type": "string",
+      "enum": [
+        "Ready",
+        "InDevelopment"
+      ]
+	},
+    "description": {
+      "type": "string",
+      "options": {
+        "grid_columns": 12
+      }
+    },
+	"testCaseMetas": {
+	  "type": "array",
+	  "format": "table",
+	  "title": "Metas",
+	  "items": {
+		"type": "object",
+		"properties": {
+		  "id": {
+			"type": "string",
+            "options": {
+              "hidden": true
+            }
+		  },
+		  "metaKey": {
+			"type": "string"
+		  },
+		  "metaValue": {
+			"type": "string"
+		  }
+		}
+	  },
+      "options": {
+        "grid_columns": 12
+      }
+	},
+	"testCaseTags": {
+	  "type": "array",
+	  "format": "table",
+	  "title": "Tags",
+	  "items": {
+		"type": "object",
+		"properties": {
+		  "id": {
+			"type": "integer",
+            "options": {
+              "hidden": true
+            }
+		  },
+		  "tag": {
+			"type": "string"
+		  }
+		}
+	  },
+      "options": {
+        "grid_columns": 12
+      }
+	},
+	"testSteps": {
+	  "type": "array",
+	  "format": "tabs",
+	  "title": "Steps",
+	  "items": {
+		"type": "object",
+		"properties": {
+		  "id": {
+			"type": "integer",
+            "options": {
+              "hidden": true
+            }
+		  },
+		  "stepNo": {
+			"type": "integer",
+            "default": 1
+		  },
+          "operator": {
+            "type": "string"
+          },
+          "parameter": {
+            "type": "string"
+          },
+          "remark": {
+            "type": "string"
+          }
+		}
+	  }
+	},
+	"testDatas": {
+	  "type": "array",
+	  "format": "tabs",
+	  "title": "Test Data",
+	  "items": {
+		"type": "object",
+		"properties": {
+		  "id": {
+			"type": "integer",
+            "options": {
+              "hidden": true
+            }
+		  },
+          "field": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "remark": {
+            "type": "string"
+          }
+		}
+	  }
+	}
+  }
+}

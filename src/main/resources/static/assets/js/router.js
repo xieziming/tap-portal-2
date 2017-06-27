@@ -29,9 +29,13 @@ app.config(
             abstract: true
         }).state('tap.testcase.list', {
             url: '/list',
-            params: '/',
             templateUrl: 'assets/views/content/test-case-list.html',
-            resolve: lazyLoad('testCaseListController')
+            resolve: lazyLoad('testCaseListController','ngTable')
+        }).state('tap.testcase.detail', {
+            url: '/:uid',
+            params: {uid:''},
+            templateUrl: 'assets/views/content/test-case-detail.html',
+            resolve: lazyLoad('testCaseDetailController', 'json-editor')
         });
 
 

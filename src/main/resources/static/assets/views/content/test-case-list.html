@@ -1,35 +1,13 @@
-<div class="pageId"><span>Test Case: Listed By Path</span></div>
+<div class="pageId"><span>All Test Cases</span></div>
 <div class="page group">
     <div id="testcases" ng-controller="testCaseListController">
-        <div class="table sectionedit32">
-            <table class="inline">
-            <thead>
-            <tr class="row0">
-                <th class="col0 leftalign"><a ng-click="loadPath(parentPath)">.. {{parentPath}} </a> </th><th class="col1">  </th>
+        <table ng-table="testCaseTable" show-filter="true" class="table table-striped">
+            <tr ng-repeat="testCase in $data">
+                <td class="col-md-1" data-title="'Path'" filter="{ 'path': 'text' }" sortable="'path'"> {{testCase.path}} </td>
+                <td class="col-md-1" data-title="'UID'" filter="{ 'uid': 'text' }" sortable="'uid'"> {{testCase.uid}} </td>
+                <td class="col-md-1" data-title="'Name'" filter="{ 'name': 'text' }" sortable="'name'"> <a ui-sref="tap.testcase.detail({uid:testCase.uid})" target="_blank">{{testCase.name}}</a></td>
+                <td class="col-md-1" data-title="'Status'" filter="{ 'status': 'text' }" sortable="'status'">{{testCase.status}}</td>
             </tr>
-            <tr class="row0">
-                <th class="col0 leftalign"><a ng-click="loadPath(currentPath)">. {{currentPath}} </a> </th><th class="col1">  </th>
-            </tr>
-            <tr class="row0" ng-repeat="testCasePath in testCasePathSearchResult.testCasePaths">
-                <th class="col0 leftalign"><a ng-click="loadPath(testCasePath.path)"> {{testCasePath.path}} </a> </th><th class="col1"> {{testCasePath.testCaseCount}}  </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="row1" ng-repeat="testCase in testCasePathSearchResult.testCases">
-                <td class="col0"> {{testCase.uid}} </td><td class="col1"> {{testCase.name}}</td>
-            </tr>
-            </tbody>
-        </table></div>
+        </table>
     </div>
 </div>
-<div class="docInfo">sdsddsdsds</div>
-
-
-<table ng-table="executionPlanTable" show-filter="true" class="table table-striped">
-    <tr ng-repeat="executionPlan in $data">
-        <td class="col-md-1" data-title="'ID'" filter="{ 'id': 'text' }" sortable="'id'"> {{executionPlan.id}} </td>
-        <td data-title="'Name'" filter="{ 'name': 'text' }" sortable="'name'"> <a ui-sref="app.execution_plan.detail({id : executionPlan.id})">{{executionPlan.name}}</a></td>
-        <td class="col-md-1" data-title="'Status'" filter="{ 'status': 'text' }" sortable="'status'">{{executionPlan.status}}</td>
-        <td data-title="'Remark'" filter="{ 'description': 'text' }">{{executionPlan.description}}</td>
-    </tr>
-</table>

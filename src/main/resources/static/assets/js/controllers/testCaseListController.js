@@ -5,15 +5,14 @@
  */
 
 'use strict';
-app.controller('testCaseListController', function ($scope, $http, TAP_GATEWAY, $stateParams) {
-
+app.controller('testCaseListController', function ($scope, $http, TAP_GATEWAY, tapTable) {
+    /*
     var loadPath = function(path) {
-        $scope.parentPath = $scope.currentPath;
         $scope.currentPath = path;
 
         $http({
             method: 'POST',
-            url: TAP_GATEWAY.testCaseRequest + '/search/path',
+            url: TAP_GATEWAY.testCaseRequest + '/testcase/search/path',
             data: {path: path},
             headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'},
             transformRequest: function (obj) {
@@ -24,13 +23,18 @@ app.controller('testCaseListController', function ($scope, $http, TAP_GATEWAY, $
                 return str.join("&");
             }
         }).then(function (response) {
-            $scope.testCasePathSearchResult = response.data;
+            $scope.testCases = response.data;
         });
+
+
     };
+    loadPath("/");
+    */
 
-    var currentPath = $stateParams[0];
-    $scope.loadPath = loadPath;
-
-    $scope.currentPath = currentPath;
-    loadPath(currentPath);
+    $scope.isLoading = true;
+    $http.get(TAP_GATEWAY.testCaseRequest+"/testcase/search/all").then(function (response) {
+        $scope.isLoading = false;
+        $scope.testCases = response.data;
+        $scope.testCaseTable = tapTable.createTable($scope.testCases);
+    });
 });
