@@ -36,6 +36,23 @@ app.config(
             params: {uid:''},
             templateUrl: 'assets/views/content/test-case-detail.html',
             resolve: lazyLoad('testCaseDetailController', 'json-editor')
+        }).state('tap.execution', {
+            url: '/execution',
+            template: '<div ui-view ></div>',
+            abstract: true
+        }).state('tap.execution.context', {
+            url: '/context',
+            template: '<div ui-view ></div>',
+            abstract: true
+        }).state('tap.execution.context.list', {
+            url: '/list',
+            templateUrl: 'assets/views/content/execution-context-list.html',
+            resolve: lazyLoad('executionContextListController','ngTable')
+        }).state('tap.execution.context.detail', {
+            url: '/:name',
+            params: {name:''},
+            templateUrl: 'assets/views/content/execution-context-detail.html',
+            resolve: lazyLoad('executionContextDetailController', 'json-editor')
         });
 
 

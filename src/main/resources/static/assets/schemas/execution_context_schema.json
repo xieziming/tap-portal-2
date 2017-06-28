@@ -1,0 +1,35 @@
+{
+	"title": "Execution Context",
+  	"type": "object",
+  	"id": "execution_context",
+  	"properties": {
+    	"name": {
+      		"type": "string",
+			"options": {
+				"grid_columns": 6
+			}
+    	},
+		"remark": {
+			"type": "string",
+			"options": {
+				"grid_columns": 6
+			}
+		},
+		"context": {
+			"type": "string",
+			"media": {
+				"type": "text/xml"
+			},
+			"options": {
+				"grid_columns": 12,
+				"expand_height": true
+			}
+		},
+		"lastModified": {
+			"type": "string",
+			"options": {
+				"hidden": true
+			}
+		}
+  	}
+}

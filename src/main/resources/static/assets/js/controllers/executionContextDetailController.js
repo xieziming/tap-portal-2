@@ -5,44 +5,44 @@
  */
 
 'use strict';
-app.controller('testCaseDetailController', function ($scope, $http, TAP_GATEWAY, $stateParams, $state) {
-    var uid = $stateParams.uid;
+app.controller('executionContextDetailController', function ($scope, $http, TAP_GATEWAY, $stateParams, $state) {
+    var name = $stateParams.name;
 
     JSONEditor.defaults.theme = 'bootstrap3';
     JSONEditor.defaults.iconlib = 'fontawesome4';
 
-    var saveTestCase = function (testcase) {
-        $http.post(TAP_GATEWAY.testCaseRequest+"/testcase", testcase).then(function (response) {
+    var saveExecutionContext = function (executionContext) {
+        $http.post(TAP_GATEWAY.executionRequest+"/execution/context", executionContext).then(function (response) {
             alert("ok");
-            $state.go("tap.testcase.detail", {uid: testcase.uid});
+            $state.go("tap.execution.context.detail", {name: executionContext.name});
         });
     }
 
-    var showTestCaseEditor = function (testcase) {
+    var showExecutionContextEditor = function (executionContext) {
         var editor = new JSONEditor(document.getElementById('editor_holder'),{
             // Enable fetching schemas via ajax
             ajax: true,
 
             // The schema for the editor
             schema: {
-                $ref: "assets/schemas/testcase_schema.json",
+                $ref: "assets/schemas/execution_context_schema.json",
                 format: "grid"
             },
 
             // Seed the form with a starting value
-            startval: testcase
+            startval: executionContext
         });
 
         // Hook up the submit button to log to the console
         document.getElementById('submit').addEventListener('click',function() {
             // Get the value from the editor
-            testcase = editor.getValue();
-            saveTestCase(testcase);
+            executionContext = editor.getValue();
+            saveExecutionContext(executionContext);
         });
 
         // Hook up the Restore to Default button
         document.getElementById('restore').addEventListener('click',function() {
-            editor.setValue(testcase);
+            editor.setValue(executionContext);
         });
 
         // Hook up the validation indicator to update its
@@ -64,28 +64,21 @@ app.controller('testCaseDetailController', function ($scope, $http, TAP_GATEWAY,
                 indicator.textContent = 'valid';
             }
         });
-        //editor.getEditor('root.createdTime').disable();
     }
 
-    var emptyTestCase = {
-        "path": "/",
-        "createdTime": null,
-        "uid": "",
-        "name": "",
-        "status": "Ready",
-        "description": "",
-        "testCaseMetas": [],
-        "testCaseTags": [],
-        "testSteps": [],
-        "testDatas": []
+    var emptyExecutionContext = {
+        "name": null,
+        "context": null,
+        "remark": null,
+        "lastModified": null
     };
 
-    if(uid == null||angular.equals({}, uid) || angular.equals('', uid)) {
-        showTestCaseEditor(emptyTestCase);
+    if(name == null||angular.equals({}, name) || angular.equals('', name)) {
+        showExecutionContextEditor(emptyExecutionContext);
     }else {
-        $http.get(TAP_GATEWAY.testCaseRequest + "/testcase/" + uid).then(function (response) {
-            $scope.testCaseDetail = response.data;
-            showTestCaseEditor($scope.testCaseDetail);
+        $http.get(TAP_GATEWAY.executionRequest + "/execution/context/" + name).then(function (response) {
+            $scope.executionContextDetail = response.data;
+            showExecutionContextEditor($scope.executionContextDetail);
         });
     }
 });

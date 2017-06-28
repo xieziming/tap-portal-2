@@ -5,31 +5,7 @@
  */
 
 'use strict';
-app.controller('testCaseListController', function ($scope, $http, TAP_GATEWAY, $filter, ngTableParams) {
-    /*
-    var loadPath = function(path) {
-        $scope.currentPath = path;
-
-        $http({
-            method: 'POST',
-            url: TAP_GATEWAY.testCaseRequest + '/testcase/search/path',
-            data: {path: path},
-            headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'},
-            transformRequest: function (obj) {
-                var str = [];
-                for (var p in obj) {
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-                }
-                return str.join("&");
-            }
-        }).then(function (response) {
-            $scope.testCases = response.data;
-        });
-
-
-    };
-    loadPath("/");
-    */
+app.controller('executionContextListController', function ($scope, $http, TAP_GATEWAY, $filter, ngTableParams) {
     var createNgTable = function (data) {
         var count = arguments[1]?arguments[1]:15;
         var sorting = arguments[2]?arguments[2]:'asc';
@@ -56,9 +32,9 @@ app.controller('testCaseListController', function ($scope, $http, TAP_GATEWAY, $
     };
 
     $scope.isLoading = true;
-    $http.get(TAP_GATEWAY.testCaseRequest+"/testcase/search/all").then(function (response) {
+    $http.get(TAP_GATEWAY.executionRequest+"/execution/context/search/all").then(function (response) {
         $scope.isLoading = false;
-        $scope.testCases = response.data;
-        $scope.testCaseTable = createNgTable($scope.testCases);
+        $scope.executionContexts = response.data;
+        $scope.executionContextTable = createNgTable($scope.executionContexts);
     });
 });
