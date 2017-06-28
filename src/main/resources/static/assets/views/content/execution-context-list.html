@@ -1,7 +1,6 @@
 <div class="pageId"><span>All Test Cases</span></div>
 <div class="page group">
     <div id="execution-context" ng-controller="executionContextListController">
-        <button id='submit' class='tiny pull-right' ui-sref="tap.execution.context.detail">+ Create New</button>
         <table ng-table="executionContextTable" show-filter="true" class="table table-striped">
             <tr ng-repeat="executionContext in $data">
                 <td class="col-md-1" data-title="'Name'" filter="{ 'name': 'text' }" sortable="'name'"> <a ui-sref="tap.execution.context.detail({name:executionContext.name})" target="_blank">{{executionContext.name}}</a></td>
@@ -11,3 +10,15 @@
         </table>
     </div>
 </div>
+
+<!-- page tools -->
+<div id="dokuwiki__pagetools">
+    <div class="tools">
+        <ul>
+            <li><a ui-sref="tap.execution.context.detail"  class="action create" accesskey="e" rel="nofollow" title="Create"><span>Create a new context</span></a></li>
+            <li><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/%E5%BC%80%E5%A7%8B?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="修订记录 [O]"><span>修订记录</span></a></li>
+            <li><a href="http://127.0.0.1/wiki/doku.php/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/java/%E5%BC%80%E5%A7%8B?do=backlink"  class="action backlink" rel="nofollow" title="反向链接"><span>反向链接</span></a></li>
+            <li class="plugin_move_page"><a href=""><span>页面重命名</span></a></li><li><a href="#dokuwiki__top"  class="action top" accesskey="t" rel="nofollow" title="回到顶部 [T]"><span>回到顶部</span></a></li>                    </ul>
+    </div>
+</div>
+<!-- / page tools -->
